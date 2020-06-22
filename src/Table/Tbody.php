@@ -9,6 +9,13 @@ class Tbody extends AbstractTag
 {
     protected const TAG = 'tbody';
 
-    /** @var Tr[] */
+    /**
+     * @var Tr[]
+     */
     private $trs = [];
+
+    public function string(): string
+    {
+        return '';
+    }
 }

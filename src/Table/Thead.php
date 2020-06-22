@@ -9,7 +9,9 @@ class Thead extends AbstractTag
 {
     protected const TAG = 'thead';
 
-    /** @var Tr[] */
+    /**
+     * @var Tr[]
+     */
     private $trs = [];
 
     public function addTr(Tr $tr): void
@@ -26,12 +28,16 @@ class Thead extends AbstractTag
     }
 
     /**
-     * @param Tr[] $trs
-     * @return Thead
+     * @param  Tr[] $trs
      */
     public function setTrs(array $trs): Thead
     {
         $this->trs = $trs;
         return $this;
+    }
+
+    public function string(): string
+    {
+        return '';
     }
 }

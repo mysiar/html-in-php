@@ -7,11 +7,11 @@ abstract class AbstractTag
 {
     protected const TAG = '';
 
-    public function getString(): string
-    {
-        return '';
-    }
+    abstract public function string(): string;
 
+    /**
+     * @param string[] $attr
+     */
     public function attrParse(array $attr): string
     {
         $parsed = '';
@@ -20,7 +20,7 @@ abstract class AbstractTag
          * @var string $key
          * @var string $val
          */
-        foreach ($attr as $key => $val ) {
+        foreach ($attr as $key => $val) {
             $parsed .= sprintf('%s="%s" ', $key, $val);
         }
 

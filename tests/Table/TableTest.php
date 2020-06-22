@@ -11,7 +11,7 @@ class TableTest extends TestCase
     public function testEmpty(): void
     {
         $t = new Table();
-        $string = $t->getString();
+        $string = $t->string();
 
         $this->assertEquals('<table ></table>', $string);
     }

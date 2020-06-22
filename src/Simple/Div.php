@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Mysiar\Html\Table;
+namespace Mysiar\Html\Simple;
 
 use Mysiar\Html\AbstractSimpleTag;
 
-class Caption extends AbstractSimpleTag
+class Div extends AbstractSimpleTag
 {
-    protected const TAG = 'caption';
+    protected const TAG = 'div';
 
     public function string(): string
     {

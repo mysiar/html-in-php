@@ -9,6 +9,13 @@ class Tfoot extends AbstractTag
 {
     protected const TAG = 'tfoot';
 
-    /** @var Tr[] */
+    /**
+     * @var Tr[]
+     */
     private $trs = [];
+
+    public function string(): string
+    {
+        return '';
+    }
 }

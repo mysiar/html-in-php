@@ -9,7 +9,9 @@ class Tr extends AbstractTag
 {
     protected const TAG = 'tr';
 
-    /** @var Td[]  */
+    /**
+     * @var Td[]
+     */
     private $tds = [];
 
     public function addTd(Td $td): void
@@ -26,12 +28,16 @@ class Tr extends AbstractTag
     }
 
     /**
-     * @param Td[] $tds
-     * @return Tr
+     * @param  Td[] $tds
      */
     public function setTds(array $tds): Tr
     {
         $this->tds = $tds;
         return $this;
+    }
+
+    public function string(): string
+    {
+        return '';
     }
 }

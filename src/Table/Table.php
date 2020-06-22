@@ -9,28 +9,38 @@ class Table extends AbstractTag
 {
     protected const TAG = 'table';
 
-    /** @var Caption|null */
+    /**
+     * @var Caption|null
+     */
     private $caption = null;
 
-    /** @var Tbody|null */
+    /**
+     * @var Tbody|null
+     */
     private $tbody = null;
 
-    /** @var Tfoot|null */
+    /**
+     * @var Tfoot|null
+     */
     private $tfoot = null;
 
-    /** @var Thead|null */
+    /**
+     * @var Thead|null
+     */
     private $thead = null;
 
+    /** @var string[]  */
     private $attr;
 
+    /**
+     * @param string[] $attr
+     */
     public function __construct(array $attr = [])
     {
         $this->attr = $attr;
     }
 
     /**
-     * @param Caption|null $caption
-     * @return Table
      */
     public function setCaption(?Caption $caption = null): Table
     {
@@ -39,8 +49,6 @@ class Table extends AbstractTag
     }
 
     /**
-     * @param Tbody|null $tbody
-     * @return Table
      */
     public function setTbody(?Tbody $tbody): Table
     {
@@ -49,8 +57,6 @@ class Table extends AbstractTag
     }
 
     /**
-     * @param Tfoot|null $tfoot
-     * @return Table
      */
     public function setTfoot(?Tfoot $tfoot): Table
     {
@@ -59,8 +65,6 @@ class Table extends AbstractTag
     }
 
     /**
-     * @param Thead|null $thead
-     * @return Table
      */
     public function setThead(?Thead $thead): Table
     {
@@ -68,16 +72,16 @@ class Table extends AbstractTag
         return $this;
     }
 
-    public function getString(): string
+    public function string(): string
     {
         return sprintf(
             '<%s %s>%s%s%s%s</%s>',
             self::TAG,
             $this->attrParse($this->attr),
-            $this->caption ? $this->caption->getString() : '',
-            $this->thead ? $this->thead->getString() : '',
-            $this->tfoot ? $this->tfoot->getString() : '',
-            $this->tbody ? $this->tbody->getString() : '',
+            $this->caption ? $this->caption->string() : '',
+            $this->thead ? $this->thead->string() : '',
+            $this->tfoot ? $this->tfoot->string() : '',
+            $this->tbody ? $this->tbody->string() : '',
             self::TAG
         );
     }
