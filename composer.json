@@ -1,0 +1,29 @@
+{
+    "name": "mysiar/html-in-php",
+    "description": "PHP classes for HTML",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Piotr Synowiec",
+            "email": "psynowiec@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Mysiar\\Html\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mysiar\\Html\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+       "php": ">=7.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.2",
+        "vimeo/psalm": "^3.12"
+    }
+}
