@@ -12,7 +12,9 @@ jobs:
       - uses: actions/checkout@v1
       - name: Install Composer dependencies
         run: composer install --prefer-dist
-      - name: PHPUnit
-        run: php${{ matrix.php }} ./vendor/bin/phpunit
+      - name: Linter
+        run: php${{ matrix.php }} ./vendor/bin/parallel-lint --exclude vendor .
       - name: Psalm
         run: php${{ matrix.php }} ./vendor/bin/psalm
+      - name: PHPUnit
+        run: php${{ matrix.php }} ./vendor/bin/phpunit
