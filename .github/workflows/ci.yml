@@ -1,0 +1,18 @@
+name: CI
+
+on: [push]
+
+jobs:
+  phpcs:
+    runs-on: [ubuntu-latest]
+    strategy:
+      matrix:
+        php: [7.3]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install Composer dependencies
+        run: composer install --prefer-dist
+      - name: PHPUnit
+        run: php${{ matrix.php }} ./vendor/bin/phpunit
+      - name: Psalm
+        run: php${{ matrix.php }} ./vendor/bin/psalm
