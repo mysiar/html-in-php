@@ -14,6 +14,8 @@ jobs:
         run: composer install --prefer-dist
       - name: Linter
         run: php${{ matrix.php }} ./vendor/bin/parallel-lint --exclude vendor .
+      - name: Sniffer
+        run: php${{ matrix.php }} ./vendor/bin/phpcs --standard=./ruleset.xml --extensions=php
       - name: Psalm
         run: php${{ matrix.php }} ./vendor/bin/psalm
       - name: PHPUnit
