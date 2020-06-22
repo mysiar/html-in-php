@@ -1,6 +1,11 @@
 # PHP classes for HTML
 
-![CI](https://github.com/mysiar/html-in-php/workflows/CI/badge.svg)
+
+| master                                                                                | dev                                                                             |
+|:--------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------|
+| ![master](https://github.com/mysiar/html-in-php/workflows/CI/badge.svg?branch=master) | ![dev](https://github.com/mysiar/html-in-php/workflows/CI/badge.svg?branch=dev) |
+|                                                                                       |                                                                                 |
+
 
 <hr>
 
