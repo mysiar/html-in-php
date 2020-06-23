@@ -9,7 +9,7 @@ class Span extends AbstractSimpleTag
 {
     protected const TAG = 'span';
 
-    public function string(): string
+    public function __toString(): string
     {
         return $this->toString(self::TAG);
     }

@@ -7,7 +7,18 @@ abstract class AbstractTag
 {
     protected const TAG = '';
 
-    abstract public function string(): string;
+    /**
+     * @var string[]
+     */
+    protected $attr;
+
+    /**
+     * @param string[] $attr
+     */
+    public function __construct(array $attr = [])
+    {
+        $this->attr = $attr;
+    }
 
     /**
      * @param string[] $attr
@@ -26,4 +37,6 @@ abstract class AbstractTag
 
         return rtrim($parsed);
     }
+
+    abstract public function __toString(): string;
 }

@@ -21,7 +21,7 @@ class SpanTest extends TestCase
 
         $this->assertEquals(
             '<span class="table-bordered" style="border-collapse: collapse;">value</span>',
-            $tag->string()
+            $tag->__toString()
         );
     }
 }

@@ -9,7 +9,7 @@ class Td extends AbstractSimpleTag
 {
     protected const TAG = 'td';
 
-    public function string(): string
+    public function __toString(): string
     {
         return $this->toString(self::TAG);
     }

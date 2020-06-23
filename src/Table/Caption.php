@@ -9,7 +9,7 @@ class Caption extends AbstractSimpleTag
 {
     protected const TAG = 'caption';
 
-    public function string(): string
+    public function __toString(): string
     {
         return $this->toString(self::TAG);
     }

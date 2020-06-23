@@ -4,40 +4,12 @@ declare(strict_types=1);
 namespace Mysiar\Html\Table;
 
 use Mysiar\Html\AbstractTag;
+use Mysiar\Html\Partial\TrAwareInterface;
+use Mysiar\Html\Partial\TrAwareTrait;
 
-class Thead extends AbstractTag
+class Thead extends AbstractTag implements TrAwareInterface
 {
+    use TrAwareTrait;
+
     protected const TAG = 'thead';
-
-    /**
-     * @var Tr[]
-     */
-    private $trs = [];
-
-    public function addTr(Tr $tr): void
-    {
-        $this->trs[] = $tr;
-    }
-
-    /**
-     * @return Tr[]
-     */
-    public function getTrs(): array
-    {
-        return $this->trs;
-    }
-
-    /**
-     * @param  Tr[] $trs
-     */
-    public function setTrs(array $trs): Thead
-    {
-        $this->trs = $trs;
-        return $this;
-    }
-
-    public function string(): string
-    {
-        return '';
-    }
 }

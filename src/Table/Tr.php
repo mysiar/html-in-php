@@ -36,8 +36,21 @@ class Tr extends AbstractTag
         return $this;
     }
 
-    public function string(): string
+    public function __toString(): string
     {
-        return '';
+        /** @var string $tds */
+        $tds = '';
+
+        foreach ($this->tds as $td) {
+            $tds .= $td->__toString();
+        }
+
+        return sprintf(
+            '<%s %s>%s</%s>',
+            self::TAG,
+            $this->attrParse($this->attr),
+            $tds,
+            self::TAG
+        );
     }
 }

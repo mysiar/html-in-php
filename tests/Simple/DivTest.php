@@ -21,7 +21,7 @@ class DivTest extends TestCase
 
         $this->assertEquals(
             '<div class="table-bordered" style="border-collapse: collapse;">value</div>',
-            $tag->string()
+            $tag->__toString()
         );
     }
 }

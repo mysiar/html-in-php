@@ -21,7 +21,7 @@ class TdTest extends TestCase
 
         $this->assertEquals(
             '<td class="table-bordered" style="border-collapse: collapse;">td cell value</td>',
-            $tag->string()
+            $tag
         );
     }
 }

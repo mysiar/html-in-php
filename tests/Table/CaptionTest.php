@@ -21,7 +21,7 @@ class CaptionTest extends TestCase
 
         $this->assertEquals(
             '<caption class="table-bordered" style="border-collapse: collapse;">caption value</caption>',
-            $tag->string()
+            (string)$tag
         );
     }
 }
