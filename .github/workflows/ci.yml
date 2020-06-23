@@ -25,4 +25,4 @@ jobs:
         with:
           needs: PHPUnit
           token: ${{ secrets.CODECOV_TOKEN }}
-          file: coverage.xml
+          file: ./coverage.xml
