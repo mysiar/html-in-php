@@ -22,6 +22,6 @@ jobs:
         run: php${{ matrix.php }} ./vendor/bin/phpunit --coverage-clover=coverage.xml
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
-          with:
-            token: ${{ secrets.CODECOV_TOKEN }}
-            file: ./coverage.xml
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage.xml
