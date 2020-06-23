@@ -10,11 +10,6 @@ jobs:
         php: [7.3]
     steps:
       - uses: actions/checkout@v1
-      - uses: php-actions/composer@v1
-      - uses: php-actions/phpunit@v1
-        with:
-          config: phpunit.xml.dist
-          memory: 256M
       - name: Install Composer dependencies
         run: composer install --prefer-dist
       - name: Linter
