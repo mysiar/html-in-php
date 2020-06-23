@@ -19,7 +19,7 @@ jobs:
       - name: Psalm
         run: php${{ matrix.php }} ./vendor/bin/psalm
       - name: PHPUnit
-        run: php${{ matrix.php }} ./vendor/bin/phpunit --coverage-clover=coverage.xml
+        run: php${{ matrix.php }} ./vendor/bin/phpunit --coverage-clover=var/coverage.xml
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
