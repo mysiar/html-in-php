@@ -10,6 +10,11 @@ jobs:
         php: [7.3]
     steps:
       - uses: actions/checkout@v1
+      - name: Upload coverage to Codecov
+          uses: codecov/codecov-action@v1
+          with:
+            token: ${{ secrets.CODECOV_TOKEN }}
+            file: ./coverage.xml
       - name: Install Composer dependencies
         run: composer install --prefer-dist
       - name: Linter
@@ -20,9 +25,3 @@ jobs:
         run: php${{ matrix.php }} ./vendor/bin/psalm
       - name: PHPUnit
         run: php${{ matrix.php }} ./vendor/bin/phpunit
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
-        with:
-          needs: PHPUnit
-          token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./coverage.xml
