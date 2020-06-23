@@ -5,4 +5,14 @@
 
 <hr>
 
-![under construction](https://res.mysiar.dev/img/under-construction-keyboard-640.jpg)
+## Tags implemented
+
+* `<span>`
+* `<div>`
+* `<table>`
+    * `<caption>`
+    * `<tbody>`
+    * `<thead>`
+    * `<tfoot>`
+    * `<tr>`
+    * `<td>`
