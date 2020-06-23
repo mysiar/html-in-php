@@ -4,11 +4,12 @@ declare(strict_types=1);
 namespace Mysiar\Html\Table;
 
 use Mysiar\Html\AbstractTag;
+use Mysiar\Html\Partial\TrAwareInterface;
+use Mysiar\Html\Partial\TrAwareTrait;
 
-class Tfoot extends AbstractTag
+class Tfoot extends AbstractTag implements TrAwareInterface
 {
-    protected const TAG = 'tfoot';
+    use TrAwareTrait;
 
-    /** @var Tr[] */
-    private $trs = [];
+    protected const TAG = 'tfoot';
 }

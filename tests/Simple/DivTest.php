@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Mysiar\Html\Tests\Table;
+namespace Mysiar\Html\Tests\Simple;
 
-use Mysiar\Html\Table\Td;
+use Mysiar\Html\Simple\Div;
 use PHPUnit\Framework\TestCase;
 
-class TdTest extends TestCase
+class DivTest extends TestCase
 {
     public function test(): void
     {
@@ -15,13 +15,13 @@ class TdTest extends TestCase
             'style' => 'border-collapse: collapse;',
         ];
 
-        $value = 'td cell value';
+        $value = 'value';
 
-        $tag = new Td($value, $attr);
+        $tag = new Div($value, $attr);
 
         $this->assertEquals(
-            '<td class="table-bordered" style="border-collapse: collapse;">td cell value</td>',
-            $tag
+            '<div class="table-bordered" style="border-collapse: collapse;">value</div>',
+            $tag->__toString()
         );
     }
 }

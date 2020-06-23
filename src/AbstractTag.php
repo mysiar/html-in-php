@@ -7,11 +7,22 @@ abstract class AbstractTag
 {
     protected const TAG = '';
 
-    public function getString(): string
+    /**
+     * @var string[]
+     */
+    protected $attr;
+
+    /**
+     * @param string[] $attr
+     */
+    public function __construct(array $attr = [])
     {
-        return '';
+        $this->attr = $attr;
     }
 
+    /**
+     * @param string[] $attr
+     */
     public function attrParse(array $attr): string
     {
         $parsed = '';
@@ -20,10 +31,12 @@ abstract class AbstractTag
          * @var string $key
          * @var string $val
          */
-        foreach ($attr as $key => $val ) {
+        foreach ($attr as $key => $val) {
             $parsed .= sprintf('%s="%s" ', $key, $val);
         }
 
         return rtrim($parsed);
     }
+
+    abstract public function __toString(): string;
 }

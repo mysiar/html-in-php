@@ -17,13 +17,11 @@ class CaptionTest extends TestCase
 
         $value = 'caption value';
 
-        $td = new Caption($value, $attr);
-
-        $string = $td->getString();
+        $tag = new Caption($value, $attr);
 
         $this->assertEquals(
             '<caption class="table-bordered" style="border-collapse: collapse;">caption value</caption>',
-            $string
+            (string)$tag
         );
     }
 }
