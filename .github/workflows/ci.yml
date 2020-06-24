@@ -7,14 +7,15 @@ jobs:
     runs-on: [ubuntu-latest]
     strategy:
       matrix:
-        php: [7.3]
+        php: [7.3, 7.4]
     steps:
       - uses: actions/checkout@v1
       - name: Install Composer dependencies
         run: composer install --prefer-dist
       - name: Linter
         run: php${{ matrix.php }} ./vendor/bin/parallel-lint --exclude vendor .
-      - name: Sniffer
+      - name: Code sniffer
+        if: ${{ matrix.php == 7.3 }}
         run: php${{ matrix.php }} ./vendor/bin/phpcs --standard=./ruleset.xml --extensions=php
       - name: Psalm
         run: php${{ matrix.php }} ./vendor/bin/psalm
