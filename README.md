@@ -17,3 +17,7 @@
     * `<tfoot>`
     * `<tr>`
     * `<td>`
+
+## Example
+
+![Example.png](examples/Example.png)
