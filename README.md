@@ -10,6 +10,8 @@
 
 * `<span>`
 * `<div>`
+* `<a>`
+* `<p>`
 * `<table>`
     * `<caption>`
     * `<tbody>`
